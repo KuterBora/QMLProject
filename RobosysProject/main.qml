@@ -23,10 +23,7 @@ Window {
         }
 
         function checkExist(u, p) {
-            if (u === "kuter" && p === "1234") {
-                return true
-            }
-            return false
+            return true;
         }
     }
 
@@ -180,7 +177,7 @@ Window {
                     font.pixelSize: parent.height / 2
                     MouseArea {
                         anchors.fill: parent
-                        onPressed: login.color = "white", internal.checkLogin(username_, "1234")
+                        onPressed: login.color = "white", internal.checkLogin(username_, password_)
                         onReleased: login.color = "grey"
 
                     }
