@@ -1,32 +1,33 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Controls 2.12
 
-Window {
+Window { 
+    property string username_: nameInput.text
+    property string password_: passInput.text
+
     id: containerItem
     width: 500
     height: 500
     visible: true
-    title: qsTr("Robosys Mechatronics Systems")
-
-    property string username_: nameInput.text
-    property string password_: passInput.text
+    title: qsTr("Login to Robosys")
 
     QtObject {
         id: internal
         function checkLogin(u, p) {
-            if (checkExist(u, p)) {
+            if (controller.userExists(u, p)) {
                 visible = false
             }
         }
 
         function doSignin(u, p) {
-        }
-
-        function checkExist(u, p) {
-            return true;
+            if (!controller.userExists(u, p)) {
+                controller.addUser(u, p);
+            }
         }
     }
 
+    // outer logo
     Image {
         x: parent.width/2 - width/2
         y: parent.height/10
@@ -35,6 +36,7 @@ Window {
         source: "../images/logo.png"
     }
 
+    // outer frame
     Rectangle {
         opacity: 0.5
         x: parent.width/2 - height/4
@@ -43,6 +45,8 @@ Window {
         height: parent.height - parent.height/5;
         color: "red"
     }
+
+    // inner frame
     Rectangle {
         id: frame
         opacity: 0.9
@@ -123,7 +127,7 @@ Window {
                 }
             }
 
-            // password
+            // password box
             Rectangle {
                 x: 0
                 y: parent.height / 2
@@ -162,7 +166,7 @@ Window {
             width: (3* frame.width) / 5
             height: frame.height / 12
             color: "red"
-            // login
+            // login button
             Rectangle {
                 id: login
                 x: submit_buttons.width / 50
@@ -183,7 +187,7 @@ Window {
                     }
                 }
             }
-            // sign up
+            // sign up button
             Rectangle {
                 id: sign_up
                 x: submit_buttons.width / 2 + submit_buttons.width / 100
@@ -198,7 +202,7 @@ Window {
                     font.pixelSize: parent.height / 2
                     MouseArea {
                         anchors.fill: parent
-                        onPressed: sign_up.color = "white"
+                        onPressed: sign_up.color = "white", internal.doSignin(username_, password_)
                         onReleased: sign_up.color = "grey"
                     }
                 }
