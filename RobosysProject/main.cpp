@@ -20,5 +20,7 @@ int main(int argc, char *argv[])
     QQmlContext *root_context = engine.rootContext();
     root_context->setContextProperty("controller", &controller);
 
+
+
     return app.exec();
 }

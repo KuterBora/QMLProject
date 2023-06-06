@@ -1,4 +1,6 @@
+#include <QQmlApplicationEngine>
 #include "buttoncontrol.h"
+#include <QGuiApplication>
 #include <QtSql>
 
 ButtonControl::ButtonControl(QObject *parent) : QObject(parent)

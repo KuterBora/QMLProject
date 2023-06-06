@@ -263,9 +263,13 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 ####### Compile
 
-debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\buttoncontrol.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qsqldatabase.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsqlglobal.h \
+debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\QQmlApplicationEngine \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlapplicationengine.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlengine.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qurl.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qbytearray.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qrefcount.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qatomic.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qglobal.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qconfig.h \
@@ -277,31 +281,25 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsysinfo.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlogging.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qflags.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qatomic.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qglobalstatic.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmutex.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qnumeric.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qversiontagging.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qbasicatomic.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qatomic_bootstrap.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qgenericatomic.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qatomic_cxx11.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qatomic_msvc.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qglobalstatic.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmutex.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qnumeric.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qversiontagging.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsql-config.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstring.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qchar.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qbytearray.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qrefcount.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qnamespace.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qarraydata.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobjectdefs.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstring.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qchar.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringliteral.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringalgorithms.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringview.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringbuilder.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\QObject \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobject.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobjectdefs.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlist.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qalgorithms.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qiterator.h \
@@ -314,33 +312,65 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringlist.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qregexp.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qstringmatcher.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qurlquery.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qshareddata.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qhash.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobject.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcoreevent.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qscopedpointer.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmetatype.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qvarlengtharray.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcontainerfwd.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qobject_impl.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmap.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qdebug.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qtextstream.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qiodevice.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlocale.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qvariant.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qset.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsharedpointer.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qjsengine.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qjsvalue.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qtqmlglobal.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qtqml-config.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtNetwork\qtnetworkglobal.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtNetwork\qtnetwork-config.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmldebug.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqml.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlprivate.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlparserstatus.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmllist.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlpropertyvaluesource.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpointer.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmetaobject.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlerror.h \
+		..\RobosysProject\buttoncontrol.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qsqldatabase.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsql-config.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\QObject \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\QSql \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\QGuiApplication \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qguiapplication.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qtguiglobal.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qtgui-config.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcoreapplication.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qeventloop.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qwindowdefs.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qinputmethod.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsize.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmargins.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\QtSql \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\QtSqlDepends \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\QtCore \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\QtCoreDepends \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstractanimation.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstracteventdispatcher.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qeventloop.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstractitemmodel.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qvariant.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmap.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qdebug.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qhash.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qtextstream.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qiodevice.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlocale.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qshareddata.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qset.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcontiguouscache.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsharedpointer.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsharedpointer_impl.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstractnativeeventfilter.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstractproxymodel.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qabstractstate.h \
@@ -359,8 +389,6 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qdatetime.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcborcommon.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qregularexpression.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qurl.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qurlquery.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\quuid.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcbormap.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcborstream.h \
@@ -370,7 +398,6 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcollator.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcommandlineoption.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcommandlineparser.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcoreapplication.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qconcatenatetablesproxymodel.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qcryptographichash.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qdatastream.h \
@@ -411,10 +438,8 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlinkedlist.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qlockfile.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qloggingcategory.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmargins.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmath.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmessageauthenticationcode.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmetaobject.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmimedata.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmimedatabase.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmimetype.h \
@@ -423,7 +448,6 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qparallelanimationgroup.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpauseanimation.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qplugin.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpointer.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpluginloader.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qprocess.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpropertyanimation.h \
@@ -432,7 +456,6 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qrandom.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qreadwritelock.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qrect.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsize.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qresource.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qsavefile.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qscopedvaluerollback.h \
@@ -481,15 +504,11 @@ debug\buttoncontrol.obj: ..\RobosysProject\buttoncontrol.cpp ..\RobosysProject\b
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qsqlrelationaldelegate.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qitemdelegate.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qtguiglobal.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qtgui-config.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qabstractitemdelegate.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qstyleoption.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qabstractspinbox.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtWidgets\qwidget.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qwindowdefs.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qwindowdefs_win.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qpaintdevice.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qpalette.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtGui\qcolor.h \
@@ -624,7 +643,15 @@ debug\main.obj: ..\RobosysProject\main.cpp ..\..\..\Qt\5.15.13\msvc2019_64\inclu
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlpropertyvaluesource.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qpointer.h \
 		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\qmetaobject.h \
-		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlerror.h
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlerror.h \
+		..\RobosysProject\buttoncontrol.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qsqldatabase.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\qtsql-config.h \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtCore\QObject \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtSql\QSql \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\QQmlContext \
+		..\..\..\Qt\5.15.13\msvc2019_64\include\QtQml\qqmlcontext.h
 
 debug\qrc_qml.obj: debug\qrc_qml.cpp 
 
