@@ -173,6 +173,8 @@ release\qrc_qml.cpp: ..\RobosysProject\qml.qrc \
 		..\..\..\Qt\5.15.13\msvc2019_64\bin\rcc.exe \
 		..\RobosysProject\App.qml \
 		..\RobosysProject\main.qml \
+		..\RobosysProject\images\wideLogo.jpg \
+		..\RobosysProject\images\background_1.jpg \
 		..\RobosysProject\images\logo.png
 	D:\Qt\5.15.13\msvc2019_64\bin\rcc.exe -name qml ..\RobosysProject\qml.qrc -o release\qrc_qml.cpp
 

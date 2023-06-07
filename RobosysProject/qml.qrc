@@ -3,5 +3,8 @@
         <file>main.qml</file>
         <file>images/logo.png</file>
         <file>App.qml</file>
+        <file>images/wideLogo.jpg</file>
+        <file>images/background_1.jpg</file>
+        <file>Menubutton.qml</file>
     </qresource>
 </RCC>

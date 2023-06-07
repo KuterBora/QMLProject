@@ -9,7 +9,7 @@ Window {
     property string pop_up: " "
     title: qsTr("Login to Robosys")
 
-    width: 1000
+    width: 1500
     height: 1000
     visible: true
 
