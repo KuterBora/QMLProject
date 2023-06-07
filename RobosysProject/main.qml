@@ -39,24 +39,9 @@ Window {
     // app window
     Item {
         id: appWindow
-        width: 1000
-        height: 1000
+        anchors.fill: parent
         visible: false
-
-       Rectangle {
-           x: 0
-           y: 0
-           anchors.fill: parent
-           color: "light green"
-           Text {
-               anchors.fill: parent
-               text:  "You have logged in successfully!"
-               font.pixelSize: 30
-               font.bold: true
-               font.family: "Times New Roman"
-               anchors.centerIn: parent
-           }
-       }
+        App {}
     }
 
     // login window
@@ -111,6 +96,7 @@ Window {
                     width: frame.width * 0.75
                     height: frame.height / 6
                     font.pixelSize: height/2
+                    font.family: "Times New Roman"
                     color: "white"
                     text: "Robosys"
                 }
@@ -168,6 +154,7 @@ Window {
                         width: input_box.width - input_box.width / 50
                         height: input_box.height / 2 - input_box.width / 50
                         font.pixelSize: height / 3
+                        font.family: "Times New Roman"
                         text: "Username:"
                         color: "white"
                     }
@@ -198,6 +185,7 @@ Window {
                         width: input_box.width - input_box.width / 50
                         height: input_box.height / 2 - input_box.width / 50
                         font.pixelSize: height / 3
+                        font.family: "Times New Roman"
                         text: "Password:"
                         color: "white"
                     }
@@ -234,6 +222,7 @@ Window {
                         anchors.centerIn: parent
                         text: "Login"
                         font.pixelSize: parent.height / 2
+                        font.family: "Times New Roman"
                         MouseArea {
                             anchors.fill: parent
                             onPressed: login.color = "white", internal.checkLogin(username_, password_)
@@ -254,6 +243,7 @@ Window {
                         anchors.centerIn: parent
                         text: "Sign up"
                         font.pixelSize: parent.height / 2
+                        font.family: "Times New Roman"
                         MouseArea {
                             anchors.fill: parent
                             onPressed: sign_up.color = "white", internal.doSignin(username_, password_)

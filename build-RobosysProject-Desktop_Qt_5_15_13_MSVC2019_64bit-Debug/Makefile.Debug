@@ -172,6 +172,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_qml.cpp
 debug\qrc_qml.cpp: ..\RobosysProject\qml.qrc \
 		..\..\..\Qt\5.15.13\msvc2019_64\bin\rcc.exe \
+		..\RobosysProject\App.qml \
 		..\RobosysProject\main.qml \
 		..\RobosysProject\images\logo.png
 	D:\Qt\5.15.13\msvc2019_64\bin\rcc.exe -name qml ..\RobosysProject\qml.qrc -o debug\qrc_qml.cpp
