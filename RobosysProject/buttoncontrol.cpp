@@ -30,6 +30,20 @@ bool ButtonControl::userExists(QString username, QString password) {
     return false;
 }
 
+bool ButtonControl::nameTaken(QString username) {
+    qDebug() << "checking for account: " + username;
+    QSqlQuery query(db);
+    query.prepare("SELECT * FROM users");
+    query.exec();
+    while (query.next()) {
+        QString name = query.value(1).toString();
+        if (username == name) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void ButtonControl::addUser(QString username, QString password) {
     QSqlQuery query(db);
     QString insert = "INSERT INTO users (username, password_) values('"

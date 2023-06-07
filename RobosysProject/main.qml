@@ -6,25 +6,32 @@ Window {
     id: mainWindow
     property string username_: nameInput.text
     property string password_: passInput.text
+    property string pop_up: " "
     title: qsTr("Login to Robosys")
 
-    width: 500
-    height: 500
+    width: 1000
+    height: 1000
     visible: true
 
     QtObject {
         id: internal
         function checkLogin(u, p) {
             if (controller.userExists(u, p)) {
+                pop_up = "logging in"
                 loginWindow.visible = false;
                 mainWindow.title = "Robosys Mechatronics Systems"
                 appWindow.visible = true;
+            } else {
+                pop_up = "User not found";
             }
         }
 
         function doSignin(u, p) {
-            if (!controller.userExists(u, p)) {
+            if (!controller.nameTaken(u, p)) {
                 controller.addUser(u, p);
+                pop_up = "Signed up";
+            } else {
+                pop_up = "Name already taken";
             }
         }
     }
@@ -32,8 +39,8 @@ Window {
     // app window
     Item {
         id: appWindow
-        width: 500
-        height: 500
+        width: 1000
+        height: 1000
         visible: false
 
        Rectangle {
@@ -55,9 +62,10 @@ Window {
     // login window
     Item {
         id: loginWindow
-        width: 500
-        height: 500
+        width: 1000
+        height: 1000
         visible: true
+        anchors.fill: parent
 
         // outer logo
         Image {
@@ -118,9 +126,24 @@ Window {
                         source: "../images/logo.png"
                     }
                 }
+
+                // pop-up text
+                Rectangle {
+                    x: frame.width / 12
+                    y: frame.height * 5 / 8
+                    width: frame.width - frame.width / 6
+                    height: frame.height / 12
+                    color: "red"
+                    opacity: 0.7
+                    Text {
+                        anchors.centerIn: parent
+                        text: pop_up
+                        font.pixelSize: parent.height / 3
+                    }
+                }
             }
 
-            //input box
+            // input box
             Rectangle {
                 id: input_box
                 x: frame.width / 12
@@ -185,6 +208,7 @@ Window {
                         width: 2 * password.width / 3
                         height: password.height / 2
                         font.pixelSize: password.height / 3
+                        echoMode: TextInput.Password
                         color: "white"
                     }
                 }
@@ -208,7 +232,6 @@ Window {
                     color: "grey"
                     Text {
                         anchors.centerIn: parent
-                        anchors.fill: parent
                         text: "Login"
                         font.pixelSize: parent.height / 2
                         MouseArea {
@@ -229,7 +252,6 @@ Window {
                     color: "grey"
                     Text {
                         anchors.centerIn: parent
-                        anchors.fill: parent
                         text: "Sign up"
                         font.pixelSize: parent.height / 2
                         MouseArea {

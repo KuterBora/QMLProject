@@ -17,6 +17,7 @@ signals:
 public slots:
     bool userExists(QString username, QString password);
     void addUser(QString username, QString password);
+    bool nameTaken(QString username);
 };
 
 #endif // BUTTONCONTROL_H
