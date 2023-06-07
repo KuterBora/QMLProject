@@ -11,8 +11,7 @@ class ButtonControl : public QObject
 public:
     explicit ButtonControl(QObject *parent = nullptr);
     QSqlDatabase db;
-
-signals:
+    QString encrypt(QString str);
 
 public slots:
     bool userExists(QString username, QString password);

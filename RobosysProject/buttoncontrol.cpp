@@ -16,14 +16,14 @@ ButtonControl::ButtonControl(QObject *parent) : QObject(parent)
 }
 
 bool ButtonControl::userExists(QString username, QString password) {
-    qDebug() << "checking for account: " + username + " with password: " + password;
+    qDebug() << "checking for account: " + username;
     QSqlQuery query(db);
     query.prepare("SELECT * FROM users");
     query.exec();
     while (query.next()) {
         QString name = query.value(1).toString();
         QString pass = query.value(2).toString();
-        if (username == name && password == pass) {
+        if (username == name && encrypt(password) == pass) {
             return true;
         }
     }
@@ -47,7 +47,17 @@ bool ButtonControl::nameTaken(QString username) {
 void ButtonControl::addUser(QString username, QString password) {
     QSqlQuery query(db);
     QString insert = "INSERT INTO users (username, password_) values('"
-                     + username + "', '" + password + "')";
+                     + username + "', '" + encrypt(password) + "')";
     query.prepare(insert);
     query.exec();
+}
+
+QString ButtonControl::encrypt(QString str) {
+    std::string s = str.toStdString();
+    int i = 0;
+    for (char c : s) {
+        s[i] = c + 5;
+        i++;
+    }
+    return QString::fromStdString(s);
 }
