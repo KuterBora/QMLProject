@@ -3,7 +3,10 @@
         <file>main.qml</file>
         <file>images/logo.png</file>
         <file>App.qml</file>
-        <file>images/wideLogo.jpg</file>
         <file>images/background_1.jpg</file>
+        <file>TerrainWindow.qml</file>
+        <file>SalesWindow.qml</file>
+        <file>ProfileWindow.qml</file>
+        <file>images/wideLogo.png</file>
     </qresource>
 </RCC>

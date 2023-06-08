@@ -41,7 +41,10 @@ Window {
         id: appWindow
         anchors.fill: parent
         visible: false
-        App {}
+        App {
+            username: username_
+            password: password_
+        }
     }
 
     // login window
