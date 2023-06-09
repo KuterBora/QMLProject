@@ -256,5 +256,32 @@ Window {
                 }
             }
         }
+
+        MovableDrone {
+            x: parent.width * 1 / 10
+            y: parent.height / 2
+            width: parent.width / 10
+            height: width
+            a: 100
+            b: 0
+        }
+
+        MovableDrone {
+            x: parent.width * 4 / 5
+            y: parent.height * 1 / 3
+            width: parent.width / 10
+            height: width
+            a: -100
+            b: -100
+        }
+
+        MovableDrone {
+            x: parent.width * 4 / 5
+            y: parent.height * 2 / 3
+            width: parent.width / 10
+            height: width
+            a: -100
+            b: 100
+        }
     }
 }

@@ -12,10 +12,10 @@ ButtonControl::ButtonControl(QObject *parent) : QObject(parent)
     } else {
         qDebug() << "Failed to connect to database.";
     }
-
 }
 
 bool ButtonControl::userExists(QString username, QString password) {
+    cur_user = username;
     qDebug() << "checking for account: " + username;
     QSqlQuery query(db);
     query.prepare("SELECT * FROM users");
@@ -44,6 +44,19 @@ bool ButtonControl::nameTaken(QString username) {
     return false;
 }
 
+QString ButtonControl::getId(QString username) {
+    QSqlQuery query(db);
+    query.prepare("SELECT * FROM users");
+    query.exec();
+    while (query.next()) {
+        QString name = query.value(1).toString();
+        if (username == name) {
+            return query.value(0).toString();
+        }
+    }
+    return "";
+}
+
 void ButtonControl::addUser(QString username, QString password) {
     QSqlQuery query(db);
     QString insert = "INSERT INTO users (username, password_) values('"
@@ -51,6 +64,17 @@ void ButtonControl::addUser(QString username, QString password) {
     query.prepare(insert);
     query.exec();
 }
+
+void ButtonControl::updateUser(QString username, QString password) {
+    QSqlQuery query(db);
+    QString id = getId(cur_user);
+    QString update = "UPDATE users SET username = '" + username + "', password_ = '" + encrypt(password) + "' WHERE id = " + id;
+//    qDebug() << update;
+    query.prepare(update);
+    query.exec();
+    cur_user = username;
+}
+
 
 QString ButtonControl::encrypt(QString str) {
     std::string s = str.toStdString();

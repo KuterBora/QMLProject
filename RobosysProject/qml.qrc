@@ -8,5 +8,7 @@
         <file>SalesWindow.qml</file>
         <file>ProfileWindow.qml</file>
         <file>images/wideLogo.png</file>
+        <file>MovableDrone.qml</file>
+        <file>images/drone_1.png</file>
     </qresource>
 </RCC>

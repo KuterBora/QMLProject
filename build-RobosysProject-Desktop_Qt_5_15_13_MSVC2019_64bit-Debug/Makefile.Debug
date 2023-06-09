@@ -173,10 +173,12 @@ compiler_rcc_clean:
 debug\qrc_qml.cpp: ..\RobosysProject\qml.qrc \
 		..\..\..\Qt\5.15.13\msvc2019_64\bin\rcc.exe \
 		..\RobosysProject\TerrainWindow.qml \
+		..\RobosysProject\MovableDrone.qml \
 		..\RobosysProject\SalesWindow.qml \
 		..\RobosysProject\App.qml \
 		..\RobosysProject\main.qml \
 		..\RobosysProject\ProfileWindow.qml \
+		..\RobosysProject\images\drone_1.png \
 		..\RobosysProject\images\background_1.jpg \
 		..\RobosysProject\images\logo.png \
 		..\RobosysProject\images\wideLogo.png

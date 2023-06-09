@@ -6,6 +6,17 @@ Item {
     anchors.fill: parent
     property string username_
     property string password_
+    property string new_username: nameInput.text
+    property string new_password: passInput.text
+
+    QtObject {
+        id: internal
+        function updateUser() {
+            username_ = new_username
+            password_ = new_password
+            controller.updateUser(new_username, new_password)
+        }
+    }
 
     // logo
     Image {
@@ -103,4 +114,98 @@ Item {
         visible: false
         width: 500
         height: 500
-    }}
+        Rectangle {
+            id: input_box
+            x: parent.width / 6
+            y: parent.height / 4
+            width: parent.width * 4 / 6
+            height: parent.height / 4
+            color: "red"
+            border.width: width / 100
+            border.color: "white"
+
+            // username
+            Rectangle  {
+                width: parent.width
+                height: parent.height / 2
+                color: "red"
+                border.width: parent.width / 100
+                border.color: "white"
+                Text {
+                    id: username
+                    x: input_box.width / 50
+                    y: (input_box.width / 100) * 2.5
+                    height: input_box.height / 2 - input_box.width / 50
+                    font.pixelSize: height / 3
+                    font.family: "Times New Roman"
+                    text: "New Username:"
+                    color: "white"
+                }
+                TextInput {
+                    id: nameInput
+                    x: username.width * 1.2
+                    y: username.y
+                    width: parent.width
+                    height: username.height / 2
+                    font.pixelSize: username.height / 3
+                    color: "white"
+                }
+            }
+
+            // password box
+            Rectangle {
+                x: 0
+                y: parent.height / 2
+                width: parent.width
+                height: parent.height / 2
+                color: "red"
+                border.width: parent.width / 100
+                border.color: "white"
+                Text {
+                    id: password
+                    x: input_box.width / 50
+                    y: (input_box.width / 50) * 1.5
+                    height: input_box.height / 2 - input_box.width / 50
+                    font.pixelSize: height / 3
+                    font.family: "Times New Roman"
+                    text: "New Password:"
+                    color: "white"
+                }
+                TextInput {
+                    id: passInput
+                    x: password.width * 1.2
+                    y: password.y
+                    width: parent.width
+                    height: password.height / 2
+                    font.pixelSize: password.height / 3
+                    echoMode: TextInput.Password
+                    color: "white"
+                }
+            }
+
+            //submit button
+            Rectangle {
+                x: parent.width / 2 - parent.width / 6
+                y: parent.height * 1.5
+                width: parent.width / 3
+                height: parent.height * 0.45
+                color: submit.containsPress ? "grey" : "red"
+                opacity: 0.75
+                border.width: width / 100
+                border.color: "grey"
+                Text {
+                    text: "Submit"
+                    anchors.centerIn: parent
+                    font.pixelSize: parent.height / 2
+                    font.family: "Times New Roman"
+                }
+
+                MouseArea {
+                    id: submit
+                    anchors.fill: parent
+                    onPressed: internal.updateUser()
+                }
+            }
+        }
+    }
+}

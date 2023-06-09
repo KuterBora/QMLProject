@@ -1,8 +1,8 @@
 import QtQuick 2.15
 
 Item {
-    property string username
-    property string password
+    property string username: pWin.username_
+    property string password: pWin.password_
     property bool show: !tWin.visible && !sWin.visible && !pWin.visible
     anchors.fill: parent
     QtObject {
